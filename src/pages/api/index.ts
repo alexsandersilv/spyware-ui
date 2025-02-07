@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
+import { GetScreenshots } from "@/lib/mongodb";
+
 
 export default async function Handler(
     req: NextApiRequest,
@@ -7,5 +9,7 @@ export default async function Handler(
 ) 
 {
 
-    return res.json({ message: "Hello World" });
+    const data = await GetScreenshots();
+
+    return res.json(data);
 }
