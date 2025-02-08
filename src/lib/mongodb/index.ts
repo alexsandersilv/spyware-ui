@@ -35,9 +35,8 @@ export async function GetScreenshots() {
     const collection = await Connection();
 
 
-    const data = await collection.find({}).limit(5).toArray();
+    const data = await collection.find({}).toArray();
 
-    console.log(data);
     return data;
 }
 
